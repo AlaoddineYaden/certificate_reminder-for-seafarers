@@ -3,6 +3,7 @@ from django.core import mail
 from datetime import date, timedelta
 from people.models import CertificateType, Person, PersonCertificate
 from people.views import send_certificate_expiry_notifications
+from django.contrib.auth.models import User
 
 class NotificationTestCase(TestCase):
     def setUp(self):
@@ -12,6 +13,12 @@ class NotificationTestCase(TestCase):
             person=self.person,
             certificate_type=self.certificate_type,
             expiration_date=date.today() + timedelta(days=5)
+        )
+        self.admin_user = User.objects.create_user(
+            username='admin',
+            email='alaoddineyaden223@gmail.com',
+            password='testpass123',
+            is_staff=True  # Must be True to receive admin notifications
         )
 
     def test_notification_email_sent(self):
