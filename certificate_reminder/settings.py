@@ -136,7 +136,7 @@ EMAIL_HOST = 'smtp.gmail.com'  # Example for Gmail
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'cuddyduffy@gmail.com'  # Replace with your email
-EMAIL_HOST_PASSWORD = 'mmkorntpfpmneebx'  # Replace with your email's app password
+EMAIL_HOST_PASSWORD = 'rpyqkgrwgcsvnuzd'  # Replace with your email's app password
 
 
 # Celery settings
